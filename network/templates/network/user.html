@@ -1,0 +1,57 @@
+{% extends "network/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+
+<div class="container">
+
+    <h2>{{current_user}}</h2>
+    <div class="follow">
+        {% if user.is_authenticated %}
+
+        {% if current_user.pk != logged_in_user.pk %}
+        <form class="follow-button-form "
+            action="{% url 'network:user' current_user.pk %}"
+            method="post">
+            {% csrf_token %}
+            {% if is_followed %}
+            <button class="btn btn-outline-secondary btn-sm" type="submit"
+                value=follow
+                name=follow>
+                <i class="fa fa-minus-circle red"></i>
+                <span>Unfollow</span>
+            </button>
+            {% else %}
+            <button class="btn btn-outline-primary btn-sm"
+                type="submit"
+                value=follow
+                name=follow>
+                <i class="fa fa-plus-circle blue"></i>
+                <span>Follow</span>
+            </button>
+            {% endif %}
+        </form>
+        <span><small class="text-muted mr-2"></small></span>
+        {% endif %}
+        {% endif %}
+
+        <p class="card-text">
+            <small class="text-muted"><span class="bold">Following: </span> {{following}}</small>
+            <small class="text-muted"><span class="bold">Followers: </span> {{followers}}</small>
+
+        </p>
+
+    </div>
+    {% include "network/paginate.html" with posts=posts %}
+
+    {% for page in posts.object_list %}
+    {% include "network/post.html" with post=page %}
+    {% endfor %}
+
+    {% include "network/paginate.html" with posts=posts %}
+
+</div>
+
+
+{% endblock %}

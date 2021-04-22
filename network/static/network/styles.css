@@ -1,0 +1,92 @@
+.container {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 15px;
+    
+}
+
+
+
+.pb-0 {
+    padding-bottom: 0;
+}
+
+button:focus {
+    outline: 0;
+}
+
+
+.navbar {
+    background-color: #e9f8ff;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-button, .like-button, .unlike-button {
+    background: none;
+    cursor: pointer;
+    border: 0;
+}
+
+.error {
+    padding: 0;
+    list-style: none;
+    color: indianred;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+ul {
+    /* margin-top: 15px; */
+    padding: 0;
+}
+
+.blue, .follow-button {
+    color: cornflowerblue;
+}
+
+.red, .unfollow-button {
+    color: indianred;
+}
+
+.green {
+    color: seagreen;
+}
+
+.follow-button, .unfollow-button {
+    padding-left: 0;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.follow {
+    display: flex;
+}
+
+.likes-count {
+    margin-left: 5px;
+}
+
+.fa-heart {
+    color: indianred;
+}

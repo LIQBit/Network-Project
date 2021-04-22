@@ -1,0 +1,52 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<div class="container">
+    {% if messages %}
+    <ul class="mt-10">
+        {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+        <li class="error">{{ message }}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">New Post</h2>
+                <form id="post-form" action="{% url 'network:newpost' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <textarea name="post-body"
+                        class="form-control" rows="5" placeholder="Enter your text...">
+                        </textarea>
+                    </div>
+                    
+                    <button class="btn btn-primary"
+                        type="submit"
+                        value="post"
+                        name="post">
+                        Submit
+                    </button>   
+                </form>
+            </div>
+        </div>
+
+    {% endif %}
+        
+    {% include "network/paginate.html" with posts=posts %}
+
+    {% for post in posts.object_list %}
+    {% include "network/post.html" with post=post %}
+    {% endfor %}
+
+    {% include "network/paginate.html" with posts=posts %}
+
+</div>
+
+{% endblock %}
