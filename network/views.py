@@ -155,7 +155,8 @@ def register(request):
                 "message": "Username already taken."
             })
         login(request, user)
-        return HttpResponseRedirect(reverse("index"))
+        return HttpResponseRedirect(reverse("network:index"))
+        #return render(request, "network/index.htm")
     else:
         #return reverse("network:register")
         #return HttpResponseRedirect(reverse("network:register"))
