@@ -90,3 +90,33 @@ ul {
 .fa-heart {
     color: indianred;
 }
+
+.form-g {
+    display: block;
+    width: 50%;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#title-holder {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#reg-button {
+    margin-top: 20px;
+}
+
+.reg-text {
+    margin-top: 30px;
+    text-align: center;
+}

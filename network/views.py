@@ -157,6 +157,8 @@ def register(request):
         login(request, user)
         return HttpResponseRedirect(reverse("index"))
     else:
+        #return reverse("network:register")
+        #return HttpResponseRedirect(reverse("network:register"))
         return render(request, "network/register.html")
 
 
