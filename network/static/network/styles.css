@@ -120,3 +120,8 @@ form {
     margin-top: 30px;
     text-align: center;
 }
+
+textarea.form-control {
+    height: auto;
+    width: 400px;
+}
