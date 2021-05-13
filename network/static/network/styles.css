@@ -121,7 +121,11 @@ form {
     text-align: center;
 }
 
-textarea.form-control {
+#override-textbox {
+    display: flex;
+}
+
+#override-text {
     height: auto;
     width: 400px;
 }

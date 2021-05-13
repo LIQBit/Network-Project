@@ -21,8 +21,8 @@
                 <h2 class="card-title">New Post</h2>
                 <form id="post-form" action="{% url 'network:newpost' %}" method="post">
                     {% csrf_token %}
-                    <div class="form-group">
-                        <textarea name="post-body"
+                    <div class="form-group" id="override-textbox">
+                        <textarea name="post-body" id="override-text"
                         class="form-control" rows="5" placeholder="Enter your text...">
                         </textarea>
                     </div>
